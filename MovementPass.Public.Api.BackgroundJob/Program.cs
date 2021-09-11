@@ -14,7 +14,7 @@ namespace MovementPass.Public.Api.BackgroundJob
     using Microsoft.Extensions.Logging;
 
     using Amazon.DynamoDBv2;
-    using Amazon.Lambda.SQSEvents;
+    using Amazon.Lambda.KinesisEvents;
     using Amazon.XRay.Recorder.Core;
     using Amazon.XRay.Recorder.Handlers.AwsSdk;
 
@@ -26,15 +26,15 @@ namespace MovementPass.Public.Api.BackgroundJob
     {
         private static readonly ServiceProvider Container = CreateContainer();
 
-        public async Task Main(SQSEvent sqsEvent)
+        public async Task Main(KinesisEvent kinesisEvent)
         {
-            if (sqsEvent == null)
+            if (kinesisEvent == null)
             {
-                throw new ArgumentNullException(nameof(sqsEvent));
+                throw new ArgumentNullException(nameof(kinesisEvent));
             }
 
             await Container.GetRequiredService<IProcessor>()
-                .Process(sqsEvent.Records, CancellationToken.None)
+                .Process(kinesisEvent.Records, CancellationToken.None)
                 .ConfigureAwait(false);
         }
 

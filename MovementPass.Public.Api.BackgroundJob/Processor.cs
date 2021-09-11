@@ -5,14 +5,14 @@ namespace MovementPass.Public.Api.BackgroundJob
     using System.Threading;
     using System.Threading.Tasks;
 
-    using Amazon.Lambda.SQSEvents;
+    using Amazon.Lambda.KinesisEvents;
 
     using Services;
 
     public interface IProcessor
     {
         Task Process(
-            IEnumerable<SQSEvent.SQSMessage> records,
+            IEnumerable<KinesisEvent.KinesisEventRecord> records,
             CancellationToken cancellationToken);
     }
 
@@ -33,7 +33,7 @@ namespace MovementPass.Public.Api.BackgroundJob
         }
 
         public async Task Process(
-            IEnumerable<SQSEvent.SQSMessage> records,
+            IEnumerable<KinesisEvent.KinesisEventRecord> records,
             CancellationToken cancellationToken)
         {
             if (records == null)
