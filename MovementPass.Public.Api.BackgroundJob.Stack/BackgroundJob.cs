@@ -60,14 +60,6 @@
                     $"arn:aws:dynamodb:{this.Region}:{this.Account}:table/{tableName}");
 
                 table.GrantReadWriteData(lambda);
-
-                lambda.AddToRolePolicy(
-                    new PolicyStatement(
-                        new PolicyStatementProps {
-                            Effect = Effect.ALLOW,
-                            Actions = new[] { "dynamodb:Query" },
-                            Resources = new[] { $"{table.TableArn}/index/*" }
-                        }));
             }
 
             lambda.AddEventSource(new KinesisEventSource(stream,
