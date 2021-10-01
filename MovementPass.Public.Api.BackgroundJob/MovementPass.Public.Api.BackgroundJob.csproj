@@ -17,7 +17,7 @@
     <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.1.0" />
     <PackageReference Include="Amazon.Lambda.SQSEvents" Version="2.0.0" />
     <PackageReference Include="AWSSDK.Core" Version="3.7.3.14" />
-    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.0.74" />
+    <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.0.75" />
     <PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="3.7.1" />
     <PackageReference Include="AWSSDK.SimpleSystemsManagement" Version="3.7.6.3" />
     <PackageReference Include="AWSXRayRecorder.Core" Version="2.10.1" />
