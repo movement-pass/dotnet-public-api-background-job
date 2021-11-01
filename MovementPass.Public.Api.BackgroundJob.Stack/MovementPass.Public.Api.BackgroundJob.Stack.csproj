@@ -11,7 +11,7 @@
     <ItemGroup>
         <PackageReference Include="Amazon.CDK" Version="1.129.0" />
         <PackageReference Include="Amazon.CDK.AWS.DynamoDB" Version="1.129.0" />
-        <PackageReference Include="Amazon.CDK.AWS.IAM" Version="1.129.0" />
+        <PackageReference Include="Amazon.CDK.AWS.IAM" Version="1.130.0" />
         <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.129.0" />
         <PackageReference Include="Amazon.CDK.AWS.Lambda.EventSources" Version="1.129.0" />
         <PackageReference Include="Amazon.CDK.AWS.SQS" Version="1.129.0" />
