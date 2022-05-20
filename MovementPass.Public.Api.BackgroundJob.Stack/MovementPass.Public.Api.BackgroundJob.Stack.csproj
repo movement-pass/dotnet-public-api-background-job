@@ -1,22 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
-        <LangVersion>preview</LangVersion>
+        <TargetFramework>net6.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
     </PropertyGroup>
     <PropertyGroup>
         <AnalysisMode>AllEnabledByDefault</AnalysisMode>
         <AnalysisLevel>latest</AnalysisLevel>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Amazon.CDK" Version="1.137.0" />
-        <PackageReference Include="Amazon.CDK.AWS.DynamoDB" Version="1.137.0" />
-        <PackageReference Include="Amazon.CDK.AWS.IAM" Version="1.137.0" />
-        <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.137.0" />
-        <PackageReference Include="Amazon.CDK.AWS.Lambda.EventSources" Version="1.137.0" />
-        <PackageReference Include="Amazon.CDK.AWS.SQS" Version="1.137.0" />
-        <PackageReference Include="Amazon.CDK.AWS.SSM" Version="1.137.0" />
-        <PackageReference Include="Amazon.Jsii.Analyzers" Version="1.50.0" PrivateAssets="all" />
+        <PackageReference Include="Amazon.CDK" Version="1.156.1" />
+        <PackageReference Include="Amazon.CDK.AWS.DynamoDB" Version="1.156.1" />
+        <PackageReference Include="Amazon.CDK.AWS.IAM" Version="1.156.1" />
+        <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.156.1" />
+        <PackageReference Include="Amazon.CDK.AWS.Lambda.EventSources" Version="1.156.1" />
+        <PackageReference Include="Amazon.CDK.AWS.SQS" Version="1.156.1" />
+        <PackageReference Include="Amazon.CDK.AWS.SSM" Version="1.156.1" />
+        <PackageReference Include="Amazon.Jsii.Analyzers" Version="1.59.0" PrivateAssets="all" />
         <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

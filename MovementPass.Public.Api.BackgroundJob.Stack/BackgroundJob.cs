@@ -28,8 +28,8 @@
                     FunctionName = name,
                     Handler =
                         "MovementPass.Public.Api.BackgroundJob::MovementPass.Public.Api.BackgroundJob.Program::Main",
-                    Runtime = Runtime.DOTNET_CORE_3_1,
-                    Timeout = Duration.Minutes(5),
+                    Runtime = Runtime.DOTNET_6,
+                    Timeout = Duration.Minutes(15),
                     MemorySize = 3008,
                     Code = Code.FromAsset($"dist/{name}.zip"),
                     Tracing = Tracing.ACTIVE,

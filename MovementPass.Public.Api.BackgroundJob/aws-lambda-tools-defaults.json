@@ -1,6 +1,5 @@
 {
   "configuration": "Release",
-  "framework": "netcoreapp3.1",
-  "function-runtime": "dotnetcore3.1",
+  "function-runtime": "dotnet6",
   "function-handler": "MovementPass.Public.Api.BackgroundJob::MovementPass.Public.Api.BackgroundJob.Program::Main"
 }
