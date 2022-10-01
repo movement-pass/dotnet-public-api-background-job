@@ -15,7 +15,7 @@
         <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.172.0" />
         <PackageReference Include="Amazon.CDK.AWS.Lambda.EventSources" Version="1.172.0" />
         <PackageReference Include="Amazon.CDK.AWS.SQS" Version="1.172.0" />
-        <PackageReference Include="Amazon.CDK.AWS.SSM" Version="1.172.0" />
+        <PackageReference Include="Amazon.CDK.AWS.SSM" Version="1.175.0" />
         <PackageReference Include="Amazon.Jsii.Analyzers" Version="1.67.0" PrivateAssets="all" />
         <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
