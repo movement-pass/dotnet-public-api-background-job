@@ -1,9 +1,8 @@
-﻿namespace MovementPass.Public.Api.BackgroundJob.Infrastructure
-{
-    using System;
+﻿namespace MovementPass.Public.Api.BackgroundJob.Infrastructure;
 
-    public static class Clock
-    {
-        public static Func<DateTime> Now { get; set; } = () => DateTime.UtcNow;
-    }
+using System;
+
+public static class Clock
+{
+    public static Func<DateTime> Now { get; set; } = () => DateTime.UtcNow;
 }
