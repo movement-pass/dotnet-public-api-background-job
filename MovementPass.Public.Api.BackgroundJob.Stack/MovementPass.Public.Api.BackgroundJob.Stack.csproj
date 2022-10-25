@@ -9,14 +9,14 @@
         <AnalysisLevel>latest</AnalysisLevel>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Amazon.CDK" Version="1.175.0" />
-        <PackageReference Include="Amazon.CDK.AWS.DynamoDB" Version="1.175.0" />
-        <PackageReference Include="Amazon.CDK.AWS.IAM" Version="1.175.0" />
-        <PackageReference Include="Amazon.CDK.AWS.Kinesis" Version="1.175.0" />
-        <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.175.0" />
-        <PackageReference Include="Amazon.CDK.AWS.Lambda.EventSources" Version="1.175.0" />
-        <PackageReference Include="Amazon.CDK.AWS.SSM" Version="1.175.0" />
-        <PackageReference Include="Amazon.Jsii.Analyzers" Version="1.69.0" PrivateAssets="all" />
+        <PackageReference Include="Amazon.CDK" Version="1.178.0" />
+        <PackageReference Include="Amazon.CDK.AWS.DynamoDB" Version="1.178.0" />
+        <PackageReference Include="Amazon.CDK.AWS.IAM" Version="1.178.0" />
+        <PackageReference Include="Amazon.CDK.AWS.Kinesis" Version="1.178.0" />
+        <PackageReference Include="Amazon.CDK.AWS.Lambda" Version="1.178.0" />
+        <PackageReference Include="Amazon.CDK.AWS.Lambda.EventSources" Version="1.178.0" />
+        <PackageReference Include="Amazon.CDK.AWS.SSM" Version="1.178.0" />
+        <PackageReference Include="Amazon.Jsii.Analyzers" Version="1.70.0" PrivateAssets="all" />
         <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" Version="6.0.0">
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
