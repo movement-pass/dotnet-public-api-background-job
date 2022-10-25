@@ -1,22 +1,21 @@
-namespace MovementPass.Public.Api.BackgroundJob.ExtensionMethods
-{
-    using System;
-    using System.Collections;
+namespace MovementPass.Public.Api.BackgroundJob.ExtensionMethods;
+
+using System;
+using System.Collections;
     
-    using Infrastructure;
+using Infrastructure;
 
-    internal static class EnumerableExtensions
+internal static class EnumerableExtensions
+{
+    public static IEnumerable Cast(this IEnumerable instance, Type type)
     {
-        public static IEnumerable Cast(this IEnumerable instance, Type type)
+        if (instance == null)
         {
-            if (instance == null)
-            {
-                return null;
-            }
-
-            var caster = EnumerableCaster.Get(type);
-
-            return caster(instance);
+            return null;
         }
+
+        var caster = EnumerableCaster.Get(type);
+
+        return caster(instance);
     }
 }

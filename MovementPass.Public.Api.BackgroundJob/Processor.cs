@@ -1,51 +1,50 @@
-namespace MovementPass.Public.Api.BackgroundJob
+namespace MovementPass.Public.Api.BackgroundJob;
+
+using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
+
+using Amazon.Lambda.SQSEvents;
+
+using Services;
+
+public interface IProcessor
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Threading;
-    using System.Threading.Tasks;
+    Task Process(
+        IEnumerable<SQSEvent.SQSMessage> records,
+        CancellationToken cancellationToken);
+}
 
-    using Amazon.Lambda.SQSEvents;
+public class Processor : IProcessor
+{
+    private readonly IDataReducer _dataReducer;
+    private readonly IDataLoader _dataLoader;
 
-    using Services;
-
-    public interface IProcessor
+    public Processor(IDataReducer dataReducer, IDataLoader dataLoader)
     {
-        Task Process(
-            IEnumerable<SQSEvent.SQSMessage> records,
-            CancellationToken cancellationToken);
+        this._dataReducer = dataReducer ??
+                            throw new ArgumentNullException(
+                                nameof(dataReducer));
+
+        this._dataLoader = dataLoader ??
+                           throw new ArgumentNullException(
+                               nameof(dataLoader));
     }
 
-    public class Processor : IProcessor
+    public async Task Process(
+        IEnumerable<SQSEvent.SQSMessage> records,
+        CancellationToken cancellationToken)
     {
-        private readonly IDataReducer _dataReducer;
-        private readonly IDataLoader _dataLoader;
-
-        public Processor(IDataReducer dataReducer, IDataLoader dataLoader)
+        if (records == null)
         {
-            this._dataReducer = dataReducer ??
-                                throw new ArgumentNullException(
-                                    nameof(dataReducer));
-
-            this._dataLoader = dataLoader ??
-                               throw new ArgumentNullException(
-                                   nameof(dataLoader));
+            throw new ArgumentNullException(nameof(records));
         }
 
-        public async Task Process(
-            IEnumerable<SQSEvent.SQSMessage> records,
-            CancellationToken cancellationToken)
-        {
-            if (records == null)
-            {
-                throw new ArgumentNullException(nameof(records));
-            }
+        var applications = this._dataReducer
+            .Reduce(records);
 
-            var applications = this._dataReducer
-                .Reduce(records);
-
-            await this._dataLoader.Load(applications, cancellationToken)
-                .ConfigureAwait(false);
-        }
+        await this._dataLoader.Load(applications, cancellationToken)
+            .ConfigureAwait(false);
     }
 }
