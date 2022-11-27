@@ -10,7 +10,7 @@ jobs:
       - name: .NET setup
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 6
+          dotnet-version: 6.x
 
       - name: Lambda.Tools install
         run: dotnet tool install -g Amazon.Lambda.Tools
