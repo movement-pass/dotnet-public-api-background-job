@@ -10,7 +10,7 @@ jobs:
       - name: .NET setup
         uses: actions/setup-dotnet@v2
         with:
-          dotnet-version: 6.x.x
+          dotnet-version: 6
 
       - name: Lambda.Tools install
         run: dotnet tool install -g Amazon.Lambda.Tools
@@ -22,8 +22,8 @@ jobs:
           dotnet lambda package -o movement-pass_public-api-background-job_v1.zip
 
       - name: Update
-        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && env.AWS_REGION != '' }}
-        uses: kazimanzurrashid/aws-lambda-update-action@v1
+        if: ${{ github.event_name == 'push' && github.ref_name == 'main' && env.AWS_REGION != '' }}
+        uses: kazimanzurrashid/aws-lambda-update-action@v2.0.1
         with:
           zip-file: MovementPass.Public.Api.BackgroundJob/movement-pass_public-api-background-job_v1.zip
         env:

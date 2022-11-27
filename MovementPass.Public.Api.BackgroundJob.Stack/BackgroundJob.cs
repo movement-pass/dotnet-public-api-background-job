@@ -2,6 +2,7 @@
 
 using System.Collections.Generic;
 
+using Constructs;
 using Amazon.CDK;
 using Amazon.CDK.AWS.DynamoDB;
 using Amazon.CDK.AWS.IAM;
