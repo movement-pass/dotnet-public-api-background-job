@@ -1,5 +1,5 @@
 {
-  "app": "dotnet run -p MovementPass.Public.Api.BackgroundJob.Stack.csproj",
+  "app": "dotnet run --project MovementPass.Public.Api.BackgroundJob.Stack.csproj",
   "context": {
     "@aws-cdk/aws-apigateway:usagePlanKeyOrderInsensitiveId": true,
     "@aws-cdk/core:stackRelativeExports": true,
