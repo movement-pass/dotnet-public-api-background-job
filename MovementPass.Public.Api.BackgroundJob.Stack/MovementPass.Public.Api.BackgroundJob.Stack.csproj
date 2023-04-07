@@ -9,8 +9,8 @@
         <AnalysisLevel>latest</AnalysisLevel>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Amazon.CDK.Lib" Version="2.63.0" />
-        <PackageReference Include="Amazon.Jsii.Analyzers" Version="1.74.0" PrivateAssets="all" />
-        <PackageReference Include="Constructs" Version="10.1.237" />
+        <PackageReference Include="Amazon.CDK.Lib" Version="2.73.0" />
+        <PackageReference Include="Amazon.Jsii.Analyzers" Version="1.80.0" PrivateAssets="all" />
+        <PackageReference Include="Constructs" Version="10.1.304" />
     </ItemGroup>
 </Project>
